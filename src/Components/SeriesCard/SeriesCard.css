@@ -1,8 +1,20 @@
 .series-card-container {
-	background: red;
+	background: white;
+	box-shadow: 0 5px 6px -6px black;
+}
+
+@media (hover: hover) {
+	.series-card-container a:hover {
+		text-decoration: none;
+	}
+	.series-card-container:hover {
+		transform: translateY(-2px);
+		transition: ease-in-out 0.17s;
+	}
 }
 
 .series-card {
+	padding: 5px;
 	display: grid;
 	grid-template-columns: 1fr 3fr;
 	grid-template-rows: 30px 60px;
