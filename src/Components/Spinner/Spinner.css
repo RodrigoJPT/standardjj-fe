@@ -1,12 +1,10 @@
 /* Spinner code taken and modified from loading.io */
 
 .lds-spinner {
-	color: official;
-	width: 100%;
+	width: calc(100% - 80px);
 	height: 100%;
 	display: flex;
 	justify-content: center;
-	align-content: center;
 	padding-top: 25vh;
 }
 .lds-spinner div {
