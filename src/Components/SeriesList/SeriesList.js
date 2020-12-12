@@ -16,7 +16,7 @@ const SeriesList = () => {
 		return <Spinner />;
 	}
 	return (
-		<ul style={{ listStyleType: 'none', padding: '0', margin: '0 30px' }}>
+		<ul style={{ listStyleType: 'none', padding: '0', margin: '0 5px' }}>
 			{series.map((serie) => (
 				<SeriesCard series={serie} />
 			))}
