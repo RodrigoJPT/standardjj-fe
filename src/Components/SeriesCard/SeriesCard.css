@@ -14,7 +14,6 @@
 }
 
 .series-card {
-	padding: 5px;
 	display: block;
 	margin: 10px 0;
 }
@@ -29,9 +28,11 @@
 
 .series-card h3 {
 	margin: 2px 0;
+	padding: 0 3px;
 }
 
 .series-card p {
 	margin: 2px 0;
 	color: black;
+	padding: 3px 3px 6px 3px;
 }

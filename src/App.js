@@ -4,6 +4,7 @@ import Home from './Components/Home/Home';
 import Series from './Components/Series/Series';
 import Nav from './Components/Nav/Nav';
 import SeriesDetails from './Components/SeriesDetails/SeriesDetails';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
 function App() {
 	return (
