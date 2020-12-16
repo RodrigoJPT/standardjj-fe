@@ -1,0 +1,25 @@
+.sign-up-box {
+	width: 330px;
+	margin: 30px auto;
+	padding: 10px;
+	background-color: #ffffff;
+}
+
+.sign-up-box h1 {
+	margin: 3px 0 7px 0;
+	padding: 0;
+	color: #42347b;
+}
+
+.sign-up-box form {
+	display: flex;
+	flex-direction: column;
+}
+
+.sign-up-form input {
+	width: 300px;
+	font-size: 20px;
+	padding: 10px;
+	display: block;
+	margin: 3px auto;
+}

@@ -1,27 +1,30 @@
 import React, { useEffect, useState, createContext } from 'react';
-import app from './fb';
+import { app, generateUserInfo } from './fb';
+import Spinner from './Components/Spinner/Spinner';
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-	const [currentUser, setCurrentUser] = useState(null);
+	const [user, setUser] = useState(null);
 	const [pending, setPending] = useState(true);
 
 	useEffect(() => {
-		app.auth().onAuthStateChanged((user) => {
-			setCurrentUser(user);
+		console.log('auth remounted');
+		app.auth().onAuthStateChanged(async (userAuth) => {
+			const user = await generateUserInfo(userAuth);
+			setUser(user);
 			setPending(false);
 		});
 	}, []);
 
 	if (pending) {
-		return <>Loading...</>;
+		return <Spinner />;
 	}
 
 	return (
 		<AuthContext.Provider
 			value={{
-				currentUser,
+				user,
 			}}>
 			{children}
 		</AuthContext.Provider>

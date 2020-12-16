@@ -5,6 +5,10 @@ import Series from './Components/Series/Series';
 import Nav from './Components/Nav/Nav';
 import SeriesDetails from './Components/SeriesDetails/SeriesDetails';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import SignUp from './Components/SignUp/SignUp';
+import LogIn from './Components/LogIn/LogIn';
+import UserPage from './Components/UserPage/UserPage';
+import PasswordReset from './Components/PasswordReset/PasswordReset';
 
 function App() {
 	return (
@@ -17,6 +21,10 @@ function App() {
 					path='/series/:id'
 					render={(props) => <SeriesDetails id={props.match.params.id} />}
 				/>
+				<Route path='/signup' component={SignUp} />
+				<Route path='/login' component={LogIn} />
+				<Route path='/account' component={UserPage} />
+				<Route path='/passwordreset' component={PasswordReset} />
 			</main>
 		</div>
 	);
