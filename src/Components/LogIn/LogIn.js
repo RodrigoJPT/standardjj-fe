@@ -3,10 +3,11 @@ import '../SignUp/SignUp.css';
 import FormField from '../FormField/FormField';
 import { AuthContext } from '../../Auth';
 import { auth } from '../../fb';
-import { useHistory } from 'react-router-dom';
+import { Redirect, withRouter } from 'react-router-dom';
 
 const LogIn = () => {
 	const user = useContext(AuthContext);
+	//TODO: FIGURE OUT REDIRECT IF USER EXISTS WITHOUT IT INFINITE RENDERING EVERYTHING. WEIRD BUG!!!
 	const blankForm = {
 		email: '',
 		password: '',
@@ -14,11 +15,6 @@ const LogIn = () => {
 	const [formState, setFormState] = useState(blankForm);
 	const [errors, setErrors] = useState({});
 	const [sent, setSent] = useState(false);
-	const history = useHistory();
-
-	if (user) {
-		history.push('/');
-	}
 
 	function doubleCheckForm() {
 		const errs = {};
@@ -57,7 +53,7 @@ const LogIn = () => {
 				.signInWithEmailAndPassword(formState.email, formState.password)
 				.then(() => {
 					setSent(false);
-					history.push('/');
+					return <Redirect to='/' />;
 				})
 				.catch((err) => {
 					console.error(err);
@@ -104,4 +100,4 @@ const LogIn = () => {
 	);
 };
 
-export default LogIn;
+export default withRouter(LogIn);

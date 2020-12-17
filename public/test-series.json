@@ -1,63 +1,93 @@
 [
-    {
-        "id": 0,
-        "name": "Open Guard",
-        "thumbnail": "https://img.youtube.com/vi/zphw7sT8dI0/maxresdefault.jpg",
-        "description": "Concepts for engaging as the bottom player in the open guard",
-        "videos": [
-            {
-                "description": "Connecting all of the information for engaging in an open guard.",
-                "url": "https://youtu.be/zphw7sT8dI0",
-                "title": "Open Guard: Tying It All Together",
-                "series": "Open Guard",
-                "toc": [
-                    "Intro 0:00",
-                    "Distance Control 0:50",
-                    "Destabilizing 3:43",
-                    "Creating Motion 6:02",
-                    "Dilemmas 8:58",
-                    "Summary 12:30"
-                ],
-                "yt_id": "zphw7sT8dI0"
-            }
-        ]
-    } ,
-    {
-        "id": 1,
-        "name": "Back Attacks",
-        "thumbnail": "https://img.youtube.com/vi/HB5rJNjin1o/maxresdefault.jpg",
-        "description": "Using all of your tools to create dilemmas and attack your opponent from the back mount",
-        "videos": [
-            {
-                "description": "The arm lock from the back position.",
-                "url": "https://www.youtube.com/watch?v=N93KePhZBRk",
-                "title": "Back System - Rear Armlock",
-                "series": "Back System",
-                "toc": [
-                    "Intro 0:00",
-                    "Stabilizing the position 0:55",
-                    "Grip and angle 1:18",
-                    "Kimura grip and transition 3:03",
-                    "Moving to the shoulder line 4:22",
-                    "Preventing opponent basing 5:11"
-                ],
-                "yt_id": "N93KePhZBRk"
-            },
-            {
-                "description": "This video explains how we use our back system to link attacks with the rear strangle, the arm lock, and the rear triangle, all while solving the deficit problem.",
-                "url": "https://www.youtube.com/watch?v=HB5rJNjin1o",
-                "title": "Back System - Tying It All Together",
-                "series": "Back System",
-                "toc": [
-                    "Intro 0:00",
-                    "The deficit problem 0:59",
-                    "Using threats to establish grips and angle 1:35",
-                    "Cross wedges 2:04",
-                    "Arm trapping 3:00",
-                    "Options 3:43"
-                ],
-                "yt_id": "HB5rJNjin1o"
-            }
-        ]
-    }
+	{
+		"id": 0,
+		"name": "Open Guard",
+		"thumbnail": "https://img.youtube.com/vi/zphw7sT8dI0/maxresdefault.jpg",
+		"description": "Concepts for engaging as the bottom player in the open guard",
+		"videos": [
+			{
+				"description": "Connecting all of the information for engaging in an open guard.",
+				"url": "https://youtu.be/zphw7sT8dI0",
+				"title": "Open Guard: Tying It All Together",
+				"series": "Open Guard",
+				"toc": [
+					"Intro 0:00",
+					"Distance Control 0:50",
+					"Destabilizing 3:43",
+					"Creating Motion 6:02",
+					"Dilemmas 8:58",
+					"Summary 12:30"
+				],
+				"yt_id": "zphw7sT8dI0"
+			}
+		]
+	},
+	{
+		"id": 1,
+		"name": "Back Attacks",
+		"thumbnail": "https://img.youtube.com/vi/HB5rJNjin1o/maxresdefault.jpg",
+		"description": "Using all of your tools to create dilemmas and attack your opponent from the back mount",
+		"videos": [
+			{
+				"description": "The arm lock from the back position.",
+				"url": "https://www.youtube.com/watch?v=N93KePhZBRk",
+				"title": "Back System - Rear Armlock",
+				"series": "Back System",
+				"toc": [
+					"Intro 0:00",
+					"Stabilizing the position 0:55",
+					"Grip and angle 1:18",
+					"Kimura grip and transition 3:03",
+					"Moving to the shoulder line 4:22",
+					"Preventing opponent basing 5:11"
+				],
+				"yt_id": "N93KePhZBRk"
+			},
+			{
+				"description": "This video explains how we use our back system to link attacks with the rear strangle, the arm lock, and the rear triangle, all while solving the deficit problem.",
+				"url": "https://www.youtube.com/watch?v=HB5rJNjin1o",
+				"title": "Back System - Tying It All Together",
+				"series": "Back System",
+				"toc": [
+					"Intro 0:00",
+					"The deficit problem 0:59",
+					"Using threats to establish grips and angle 1:35",
+					"Cross wedges 2:04",
+					"Arm trapping 3:00",
+					"Options 3:43"
+				],
+				"yt_id": "HB5rJNjin1o"
+			},
+			{
+				"description": "This video explains how we use our back system to link attacks with the rear strangle, the arm lock, and the rear triangle, all while solving the deficit problem.",
+				"url": "https://www.youtube.com/watch?v=HB5rJNjin1o",
+				"title": "Back System - Tying It All Together",
+				"series": "Back System",
+				"toc": [
+					"Intro 0:00",
+					"The deficit problem 0:59",
+					"Using threats to establish grips and angle 1:35",
+					"Cross wedges 2:04",
+					"Arm trapping 3:00",
+					"Options 3:43"
+				],
+				"yt_id": "HB5rJNjin1o"
+			},
+			{
+				"description": "This video explains how we use our back system to link attacks with the rear strangle, the arm lock, and the rear triangle, all while solving the deficit problem.",
+				"url": "https://www.youtube.com/watch?v=HB5rJNjin1o",
+				"title": "Back System - Tying It All Together",
+				"series": "Back System",
+				"toc": [
+					"Intro 0:00",
+					"The deficit problem 0:59",
+					"Using threats to establish grips and angle 1:35",
+					"Cross wedges 2:04",
+					"Arm trapping 3:00",
+					"Options 3:43"
+				],
+				"yt_id": "HB5rJNjin1o"
+			}
+		]
+	}
 ]

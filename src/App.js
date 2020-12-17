@@ -17,7 +17,7 @@ function App() {
 			<main id='page-wrap'>
 				<PrivateRoute path='/' exact component={Home} />
 				<PrivateRoute path='/series' exact component={Series} />
-				<PrivateRoute
+				<Route
 					path='/series/:id'
 					render={(props) => <SeriesDetails id={props.match.params.id} />}
 				/>

@@ -37,6 +37,7 @@ const Nav = () => {
 				<Link to='/series' onClick={closeMenu}>
 					Series
 				</Link>
+				<button onClick={() => auth.signOut()}>signout</button>
 			</Menu>
 			<nav className='nav-links'>
 				<Link to='/'>Home</Link>

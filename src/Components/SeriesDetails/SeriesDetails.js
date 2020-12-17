@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Spinner from '../Spinner/Spinner';
 import axios from 'axios';
 import VideoCard from '../VideoCard/VideoCard';
+import './SeriesDetails.css';
 
 const SeriesDetails = ({ id }) => {
 	const [series, setSeries] = useState(null);
@@ -18,9 +19,9 @@ const SeriesDetails = ({ id }) => {
 	}
 
 	return (
-		<div>
+		<div className='series-detail-container'>
 			<h1 className='page-header'>{series.name}</h1>
-			<h4>{series.description}</h4>
+			<h4 className='page-header'>{series.description}</h4>
 			<ul style={{ listStyleType: 'none', padding: '0', margin: '0 5px' }}>
 				{series.videos.map((video) => (
 					<li key={video.id}>

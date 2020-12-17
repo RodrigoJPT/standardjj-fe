@@ -1,0 +1,17 @@
+.series-detail-container {
+	width: 100%;
+	margin: 0 auto;
+	justify-content: center;
+}
+
+@media (min-width: 700px) {
+	.series-detail-container ul {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, max-content));
+		grid-template-rows: repeat(auto-fit, minmax(250px, max-content));
+		gap: 10px;
+	}
+	.series-detail-container {
+		max-width: 1110px;
+	}
+}

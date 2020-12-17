@@ -10,6 +10,7 @@ export const AuthProvider = ({ children }) => {
 	const [pending, setPending] = useState(true);
 
 	useEffect(() => {
+		setPending(true);
 		console.log('auth remounted');
 		auth.onAuthStateChanged(async (userAuth) => {
 			const user = await generateUserInfo(userAuth);
