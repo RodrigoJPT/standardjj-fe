@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { slide as Menu } from 'react-burger-menu';
 import { Link } from 'react-router-dom';
 import './Nav.css';
-import { auth } from '../../fb';
 
 const Nav = () => {
 	const [menuOpen, setMenuOpen] = useState(false);
@@ -37,13 +36,11 @@ const Nav = () => {
 				<Link to='/series' onClick={closeMenu}>
 					Series
 				</Link>
-				<button onClick={() => auth.signOut()}>signout</button>
 			</Menu>
 			<nav className='nav-links'>
 				<Link to='/'>Home</Link>
 				<Link to='/series'>Series</Link>
 				<Link to='/account'>Account</Link>
-				<button onClick={() => auth.signOut()}>signout</button>
 			</nav>
 		</header>
 	);

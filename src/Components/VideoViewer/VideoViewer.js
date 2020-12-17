@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useRef, useState, useEffect } from 'react';
 import ReactPlayer from 'react-player';
 import Spinner from '../Spinner/Spinner';

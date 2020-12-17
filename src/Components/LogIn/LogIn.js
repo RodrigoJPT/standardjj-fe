@@ -1,12 +1,12 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState } from 'react';
 import '../SignUp/SignUp.css';
 import FormField from '../FormField/FormField';
-import { AuthContext } from '../../Auth';
+//import { AuthContext } from '../../Auth';
 import { auth } from '../../fb';
 import { Redirect, withRouter } from 'react-router-dom';
 
 const LogIn = () => {
-	const user = useContext(AuthContext);
+	//const {user} = useContext(AuthContext);
 	//TODO: FIGURE OUT REDIRECT IF USER EXISTS WITHOUT IT INFINITE RENDERING EVERYTHING. WEIRD BUG!!!
 	const blankForm = {
 		email: '',
