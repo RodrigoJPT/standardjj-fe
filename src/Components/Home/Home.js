@@ -12,7 +12,7 @@ const Home = () => {
 
 	useEffect(() => {
 		axios
-			.get('/test-videos.json')
+			.get('http://localhost:5000/standardjj/us-central1/api/videos')
 			.then((res) => setVideos(res.data))
 			.catch(console.error);
 	}, []);
