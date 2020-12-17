@@ -35,7 +35,6 @@ const getUserDocument = async (uid) => {
 	try {
 		const userDocument = await firestore.doc(`users/${uid}`).get();
 		const data = userDocument.data();
-		console.log({ uid, ...data });
 		return {
 			uid,
 			...data,

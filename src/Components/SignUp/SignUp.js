@@ -1,8 +1,9 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import './SignUp.css';
 import FormField from '../FormField/FormField';
+import { firestore, auth } from '../../fb';
 import axios from 'axios';
-import { generateUserInfo, auth } from '../../fb';
+import { useHistory } from 'react-router-dom';
 
 //DUMMY COMPONENT FOR STYLING, DO NOT USE, FORM FIELDS WILL BE CONVERTED TO CUSTOM COMPONENTS
 const SignUp = () => {
@@ -15,6 +16,7 @@ const SignUp = () => {
 	const [formState, setFormState] = useState(blankForm);
 	const [errors, setErrors] = useState({});
 	const [sent, setSent] = useState(false);
+	const history = useHistory();
 
 	function doubleCheckForm() {
 		const errs = {};
@@ -115,10 +117,45 @@ const SignUp = () => {
 		e.preventDefault();
 		setSent(true);
 		if (doubleCheckForm()) {
-			auth
-				.createUserWithEmailAndPassword(formState.email, formState.password)
-				.then((user) => generateUserInfo(user, formState))
-				.catch(console.err);
+			let userId, token;
+			firestore
+				.collection('/users')
+				.where('username', '==', formState.username)
+				.get()
+				.then((snapshot) => {
+					if (snapshot.length) {
+						setErrors({ username: `Username already taken` });
+					} else {
+						return auth.createUserWithEmailAndPassword(
+							formState.email,
+							formState.password
+						);
+					}
+				})
+				.then((data) => {
+					userId = data.user.uid;
+					return data.user.getIdToken();
+				})
+				.then((newToken) => {
+					token = newToken;
+					const userInfo = {
+						username: formState.username,
+						email: formState.email,
+						createdAt: new Date().toISOString(),
+						userId: userId,
+					};
+					return firestore.doc(`users/${userId}`).set(userInfo);
+				})
+				.then(() => {
+					axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+					history.push('/');
+				})
+				.catch((err) => {
+					console.error(err);
+					if (err.code === 'auth/email-already-in-use') {
+						setErrors({ email: 'Email already in use' });
+					}
+				});
 		} else {
 			setSent(false);
 		}
