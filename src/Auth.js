@@ -1,6 +1,7 @@
 import React, { useEffect, useState, createContext } from 'react';
-import { app, generateUserInfo } from './fb';
+import { auth, generateUserInfo } from './fb';
 import Spinner from './Components/Spinner/Spinner';
+import axios from 'axios';
 
 export const AuthContext = createContext();
 
@@ -10,10 +11,16 @@ export const AuthProvider = ({ children }) => {
 
 	useEffect(() => {
 		console.log('auth remounted');
-		app.auth().onAuthStateChanged(async (userAuth) => {
+		auth.onAuthStateChanged(async (userAuth) => {
 			const user = await generateUserInfo(userAuth);
 			setUser(user);
 			setPending(false);
+		});
+		auth.onIdTokenChanged(async (data) => {
+			if (data) {
+				const token = await data.getIdToken();
+				axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+			}
 		});
 	}, []);
 

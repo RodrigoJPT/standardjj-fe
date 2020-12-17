@@ -3,7 +3,7 @@ import '../SignUp/SignUp.css';
 import FormField from '../FormField/FormField';
 import { AuthProvider } from '../../Auth';
 import { auth } from '../../fb';
-import { Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const LogIn = () => {
 	const user = useContext(AuthProvider);
@@ -14,9 +14,10 @@ const LogIn = () => {
 	const [formState, setFormState] = useState(blankForm);
 	const [errors, setErrors] = useState({});
 	const [sent, setSent] = useState(false);
+	const history = useHistory();
 
-	if (user !== null) {
-		return <Redirect to='/' />;
+	if (user) {
+		history.push('/');
 	}
 
 	function doubleCheckForm() {
@@ -50,9 +51,19 @@ const LogIn = () => {
 
 	function handleSubmit(e) {
 		e.preventDefault();
-		auth
-			.signInWithEmailAndPassword(formState.email, formState.password)
-			.catch(console.error);
+		if (doubleCheckForm(formState)) {
+			setSent(true);
+			auth
+				.signInWithEmailAndPassword(formState.email, formState.password)
+				.then(() => {
+					setSent(false);
+					history.push('/');
+				})
+				.catch((err) => {
+					console.error(err);
+					setSent(false);
+				});
+		}
 		//TODO: MORE SOPHISTICATED ERROR HANDLING
 	}
 
