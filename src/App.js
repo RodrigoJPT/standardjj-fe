@@ -15,9 +15,9 @@ function App() {
 		<div className='App' id='outer-container'>
 			<Nav />
 			<main id='page-wrap'>
-				<Route path='/' exact component={Home} />
-				<Route path='/series' exact component={Series} />
-				<Route
+				<PrivateRoute path='/' exact component={Home} />
+				<PrivateRoute path='/series' exact component={Series} />
+				<PrivateRoute
 					path='/series/:id'
 					render={(props) => <SeriesDetails id={props.match.params.id} />}
 				/>
