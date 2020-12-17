@@ -1,12 +1,12 @@
 import React, { useState, useContext, useEffect } from 'react';
 import '../SignUp/SignUp.css';
 import FormField from '../FormField/FormField';
-import { AuthProvider } from '../../Auth';
+import { AuthContext } from '../../Auth';
 import { auth } from '../../fb';
 import { useHistory } from 'react-router-dom';
 
 const LogIn = () => {
-	const user = useContext(AuthProvider);
+	const user = useContext(AuthContext);
 	const blankForm = {
 		email: '',
 		password: '',

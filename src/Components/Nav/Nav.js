@@ -41,6 +41,7 @@ const Nav = () => {
 			<nav className='nav-links'>
 				<Link to='/'>Home</Link>
 				<Link to='/series'>Series</Link>
+				<Link to='/account'>Account</Link>
 				<button onClick={() => auth.signOut()}>signout</button>
 			</nav>
 		</header>
