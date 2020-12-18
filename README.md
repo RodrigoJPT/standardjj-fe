@@ -1,8 +1,8 @@
 # StandardJJ 
-> A video app for members of my Jiu Jitsu gym. This will create a simple place for students to log in, select a topic, and watch instructional materials related to it.
+A video app for members of my Jiu Jitsu gym. This will create a simple place for students to log in, select a topic, and watch instructional materials related to it.
 
 ## Tech Stack
-> React front end and an express/firebase combo using cloud functions for endpoints and firestore for the db.
+React front end and an express/firebase combo using cloud functions for endpoints and firestore for the db.
 ### Other Technologies Used:
 - Axios
 - react-burger-menu
@@ -10,7 +10,7 @@
 - react-player
 
 ## Installation
-> cd into the root directory and run 'npm install'. You will need to create your own .env environment file and add the configuration/api keys from your own firebase project, as well as provide the link to your own back end in the same file.
+cd into the root directory and run 'npm install'. You will need to create your own .env environment file and add the configuration/api keys from your own firebase project, as well as provide the link to your own back end in the same file.
 
 ## User stories
 - [x] As a user, I would like to be able to log in and access my school's content.
