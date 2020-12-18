@@ -4,6 +4,7 @@ import FormField from '../FormField/FormField';
 import { AuthContext } from '../../Auth';
 import { auth } from '../../fb';
 import { Redirect, withRouter } from 'react-router-dom';
+import Spinner from '../Spinner/Spinner';
 
 const LogIn = () => {
 	const { user } = useContext(AuthContext);
@@ -19,6 +20,10 @@ const LogIn = () => {
 
 	if (user) {
 		return <Redirect to='/' />;
+	}
+
+	if (sent) {
+		return <Spinner />;
 	}
 
 	function doubleCheckForm() {
@@ -57,7 +62,6 @@ const LogIn = () => {
 			auth
 				.signInWithEmailAndPassword(formState.email, formState.password)
 				.then(() => {
-					setSent(false);
 					return <Redirect to='/' />;
 				})
 				.catch((err) => {

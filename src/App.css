@@ -26,6 +26,11 @@ button {
 button:focus {
 	outline: none;
 }
+
+button:active {
+	filter: brightness(0.6);
+	transform: translateY(2px);
+}
 main {
 	margin: 0 auto;
 }
