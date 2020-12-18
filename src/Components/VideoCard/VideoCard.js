@@ -5,10 +5,7 @@ const VideoCard = ({ video }) => {
 	return (
 		<div className='video-card-container'>
 			<Link to={`/videos/${video.id}`} className='video-card'>
-				<img
-					src={`https://img.youtube.com/vi/${video.ytId}/maxresdefault.jpg`}
-					alt=''
-				/>
+				<img src={`https://img.youtube.com/vi/${video.ytId}/0.jpg`} alt='' />
 				<h3>{video.title}</h3>
 			</Link>
 		</div>
