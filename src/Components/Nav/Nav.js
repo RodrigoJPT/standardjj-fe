@@ -36,6 +36,9 @@ const Nav = () => {
 				<Link to='/series' onClick={closeMenu}>
 					Series
 				</Link>
+				<Link to='/account' onClick={closeMenu}>
+					Account
+				</Link>
 			</Menu>
 			<nav className='nav-links'>
 				<Link to='/'>Home</Link>

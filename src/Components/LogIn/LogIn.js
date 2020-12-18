@@ -94,12 +94,12 @@ const LogIn = () => {
 				<button className='err' type='click' onClick={handleCancel}>
 					Cancel
 				</button>
-				<p style={{ display: 'block', margin: '3px', textAlign: 'center' }}>
+				{/* <p style={{ display: 'block', margin: '3px', textAlign: 'center' }}>
 					Don't have an account?&nbsp;
 					<a href='/login'>Sign up</a>
 					<br />
 					<a href='/login'>Forgot Password?</a>
-				</p>
+				</p> */}
 			</form>
 		</div>
 	);
