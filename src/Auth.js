@@ -24,8 +24,6 @@ export const AuthProvider = ({ children }) => {
 		auth.onIdTokenChanged(async (data) => {
 			if (data) {
 				const token = await data.getIdToken();
-				console.log(token);
-				window.localStorage.setItem('sjjtoken', token);
 				axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 			}
 		});
