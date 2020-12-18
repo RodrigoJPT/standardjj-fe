@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# StandardJJ 
+> A video app for members of my Jiu Jitsu gym. This will create a simple place for students to log in, select a topic, and watch instructional materials related to it.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Tech Stack
+> React front end and an express/firebase combo using cloud functions for endpoints and firestore for the db.
+### Other Technologies Used:
+- Axios
+- react-burger-menu
+- react-router-dom
+- react-player
 
-## Available Scripts
+## Installation
+> cd into the root directory and run 'npm install'. You will need to create your own .env environment file and add the configuration/api keys from your own firebase project, as well as provide the link to your own back end in the same file.
 
-In the project directory, you can run:
+## User stories
+- [x] As a user, I would like to be able to log in and access my school's content.
+- [x] As a user, I would like to be presented with links to the topics covered in class, so that I can see just the videos related to those topics
+- [ ] As a user, when I'm watching a video I would like to have immediate links to other videos in the same series so that I don't have to go back to the series page.
+- [x] As a user, I would like to have a table of contents that will take me to specific sections of the instructional videos so that I don't have to tap through the video myself.
 
-### `npm start`
+stretch:
+- [ ] As a user, if I have administrative privileges I would like to be able to add more videos after they have been uploaded to youtube
+- [ ] As a user, if I have administrative privileges I would like to be able to create new series to add videos to, so that I can upload videos for new topics and still keep things organized.
+- [ ] As a user, if I am an admin I would like to be able to edit and delete videos, so that I can fix mistakes.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Major hurdles:
+- Auth still feels clunky, as does response time from the api
+- Front end very incomplete, need to rework layouts/page content.
+- Need an admin page for owners.
