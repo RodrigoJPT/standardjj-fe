@@ -7,11 +7,10 @@ const SeriesList = () => {
 	const [series, setSeries] = useState(null);
 
 	useEffect(() => {
-		axios
-			.get('http://localhost:5000/standardjj/us-central1/api/series')
-			.then((res) => {
-				setSeries(res.data);
-			});
+		const baseUrl = process.env.REACT_APP_API_URL;
+		axios.get(`${baseUrl}/series`).then((res) => {
+			setSeries(res.data);
+		});
 	}, []);
 	if (!series) {
 		return <Spinner />;

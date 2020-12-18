@@ -12,12 +12,11 @@ const VideoViewer = ({ id }) => {
 	const [playing, setPlaying] = useState(false);
 
 	useEffect(() => {
-		axios
-			.get(`http://localhost:5000/standardjj/us-central1/api/videos/${id}`)
-			.then((res) => {
-				setVideo(res.data);
-				console.log(res.data);
-			});
+		const baseUrl = process.env.REACT_APP_API_URL;
+		axios.get(`${baseUrl}/videos/${id}`).then((res) => {
+			setVideo(res.data);
+			console.log(res.data);
+		});
 	}, []);
 
 	if (!video) {

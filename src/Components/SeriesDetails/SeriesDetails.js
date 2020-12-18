@@ -9,11 +9,10 @@ const SeriesDetails = ({ id }) => {
 	const [series, setSeries] = useState(null);
 
 	useEffect(() => {
-		axios
-			.get(`http://localhost:5000/standardjj/us-central1/api/series/${id}`)
-			.then((res) => {
-				setSeries(res.data);
-			});
+		const baseUrl = process.env.REACT_APP_API_URL;
+		axios.get(`${baseUrl}/series/${id}`).then((res) => {
+			setSeries(res.data);
+		});
 	}, []);
 
 	if (!series) {

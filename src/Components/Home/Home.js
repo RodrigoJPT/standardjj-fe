@@ -11,8 +11,9 @@ const Home = () => {
 	const [videos, setVideos] = useState(null);
 
 	useEffect(() => {
+		const baseUrl = process.env.REACT_APP_API_URL;
 		axios
-			.get('http://localhost:5000/standardjj/us-central1/api/videos')
+			.get(`${baseUrl}/videos`)
 			.then((res) => setVideos(res.data))
 			.catch(console.error);
 	}, []);
