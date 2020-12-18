@@ -40,3 +40,9 @@
 	color: black;
 	padding: 3px 3px 6px 3px;
 }
+
+@media (min-width: 700px) {
+	.video-card img {
+		max-height: 200px;
+	}
+}
