@@ -7,10 +7,11 @@ const SeriesList = () => {
 	const [series, setSeries] = useState(null);
 
 	useEffect(() => {
-		axios.get('/test-series.json').then((res) => {
-			console.log(res.data);
-			setSeries(res.data);
-		});
+		axios
+			.get('http://localhost:5000/standardjj/us-central1/api/series')
+			.then((res) => {
+				setSeries(res.data);
+			});
 	}, []);
 	if (!series) {
 		return <Spinner />;
@@ -18,7 +19,7 @@ const SeriesList = () => {
 	return (
 		<ul style={{ listStyleType: 'none', padding: '0', margin: '0 5px' }}>
 			{series.map((serie) => (
-				<SeriesCard series={serie} />
+				<SeriesCard key={serie.id} series={serie} />
 			))}
 		</ul>
 	);

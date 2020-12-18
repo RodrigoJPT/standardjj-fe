@@ -4,9 +4,9 @@ import './VideoCard.css';
 const VideoCard = ({ video }) => {
 	return (
 		<div className='video-card-container'>
-			<Link to={`/videos/${video.yt_id}`} className='video-card'>
+			<Link to={`/videos/${video.id}`} className='video-card'>
 				<img
-					src={`https://img.youtube.com/vi/${video.yt_id}/maxresdefault.jpg`}
+					src={`https://img.youtube.com/vi/${video.ytId}/maxresdefault.jpg`}
 					alt=''
 				/>
 				<h3>{video.title}</h3>
