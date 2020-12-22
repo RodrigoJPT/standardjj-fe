@@ -5,10 +5,14 @@ import { Link } from 'react-router-dom';
 const SeriesCard = ({ series }) => {
 	return (
 		<li className='series-card-container'>
-			<Link to={`/series/${series.id}`} className='series-card'>
-				<img src={series.thumbnail} alt='' />
-				<h3>{series.name}</h3>
-				<p>{series.description}</p>
+			<Link to={`/series/${series.id}`}>
+				<div
+					style={{ backgroundImage: `url('${series.thumbnail}')` }}
+					className='series-card'>
+					<div className='series-card-info-overlay'>
+						<h3>{series.name}</h3>
+					</div>
+				</div>
 			</Link>
 		</li>
 	);

@@ -15,10 +15,6 @@ export const AuthProvider = ({ children }) => {
 		auth.onAuthStateChanged(async (userAuth) => {
 			const user = await generateUserInfo(userAuth);
 			setUser(user);
-			/* const token = await userAuth.getIdToken();
-			console.log(token);
-			window.localStorage.setItem('sjjtoken', token);
-			axios.defaults.headers.common['Authorization'] = `Bearer ${token}`; */
 			setPending(false);
 		});
 		auth.onIdTokenChanged(async (data) => {

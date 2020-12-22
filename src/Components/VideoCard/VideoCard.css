@@ -19,6 +19,7 @@
 .video-card {
 	display: block;
 	margin: 10px 0;
+	height: 100%;
 }
 
 .video-card img {
@@ -33,6 +34,7 @@
 .series-name {
 	margin: 2px 0;
 	padding: 0 3px;
+	max-width: 95%;
 }
 
 .video-card p {
@@ -44,5 +46,8 @@
 @media (min-width: 700px) {
 	.video-card img {
 		max-height: 200px;
+	}
+	.video-card-container {
+		margin: 0;
 	}
 }
