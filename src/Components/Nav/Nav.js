@@ -13,9 +13,18 @@ const Nav = () => {
 				/>
 			</Link>
 			<nav className='nav-links'>
-				<Link to='/'>Home</Link>
-				<Link to='/series'>Series</Link>
-				<Link to='/account'>Account</Link>
+				<Link to='/'>
+					<i className='fas fa-home'></i>
+					<span>home</span>
+				</Link>
+				<Link to='/series'>
+					<i className='fas fa-th-list'></i>
+					<span>series</span>
+				</Link>
+				<Link to='/account'>
+					<i className='fas fa-user'></i>
+					<span>account</span>
+				</Link>
 			</nav>
 		</header>
 	);

@@ -1,4 +1,3 @@
-import userEvent from '@testing-library/user-event';
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import './VideoCard.css';
@@ -17,7 +16,9 @@ const VideoCard = ({ video }) => {
 				className='video-card-image'
 				style={{
 					backgroundImage: `url('https://img.youtube.com/vi/${video.ytId}/mqdefault.jpg')`,
-				}}></div>
+				}}>
+				<i className='far fa-play-circle'></i>
+			</div>
 			<div className='video-card-info'>
 				<h1 className='video-card-title'>
 					{video.title}
