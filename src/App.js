@@ -14,6 +14,7 @@ import LogIn from './Components/LogIn/LogIn';
 import UserPage from './Components/UserPage/UserPage';
 //import PasswordReset from './Components/PasswordReset/PasswordReset';
 import VideoViewer from './Components/VideoViewer/VideoViewer';
+import MobileNav from './Components/MobileNav/MobileNav';
 
 function App() {
 	return (
@@ -35,6 +36,7 @@ function App() {
 					render={(props) => <VideoViewer id={props.match.params.id} />}
 				/>
 			</main>
+			<MobileNav />
 		</div>
 	);
 }

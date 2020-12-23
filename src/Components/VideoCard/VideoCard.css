@@ -40,6 +40,11 @@
 	width: 180px;
 	background-size: cover;
 	background-position: center;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 40px;
 }
 
 @media (min-width: 770px) {
