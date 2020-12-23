@@ -1,0 +1,10 @@
+.series-list {
+	margin: 0 auto;
+	padding: 0;
+	width: 100%;
+}
+
+.series-list ul {
+	display: flex;
+	flex-wrap: wrap;
+}

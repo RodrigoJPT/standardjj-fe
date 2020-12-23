@@ -1,7 +1,11 @@
 .series-card-container {
+	display: inline-block;
 	background: white;
 	box-shadow: 0 5px 6px -6px black;
 	border-radius: 10px;
+	width: 100%;
+	height: 45vw;
+	margin: 3px;
 }
 
 @media (hover: hover) {
@@ -16,7 +20,7 @@
 
 .series-card {
 	display: block;
-	height: 150px;
+	height: 100%;
 	background-size: cover;
 	color: white;
 	border-radius: 10px;
@@ -24,7 +28,7 @@
 
 .series-card-info-overlay {
 	display: flex;
-	margin: 10px 0;
+	margin: 0;
 	height: 100%;
 	width: 100%;
 	flex-direction: column-reverse;
@@ -45,4 +49,12 @@
 	margin: 10px;
 	font-size: 27px;
 	max-width: 70%;
+}
+
+@media (min-width: 770px) {
+	.series-card-container {
+		width: calc(50vw - 12px);
+		max-width: 500px;
+		height: 225px;
+	}
 }

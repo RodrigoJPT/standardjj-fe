@@ -1,81 +1,5 @@
-/* Position and sizing of burger button */
-.bm-burger-button {
-	position: absolute;
-	width: 30px;
-	height: 24px;
-	right: 20px;
-	top: 17px;
-	opacity: 1;
-}
-
-/* Color/shape of burger icon bars */
-.bm-burger-bars {
-	background: #42347b;
-	opacity: 1;
-}
-
-.bm-burger-bars-hover {
-	opacity: 1 !important;
-}
-
-/* Position and sizing of clickable cross button */
-.bm-cross-button {
-	height: 45px !important;
-	width: 45px !important;
-	right: 10px;
-}
-
-/* Color/shape of close button cross */
-.bm-cross {
-	top: 10px !important;
-	right: 10px !important;
-	background: #42347b;
-	width: 3px !important;
-	height: 30px !important;
-}
-
-/*
-Sidebar wrapper styles
-Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
-*/
-.bm-menu-wrap {
-	top: 0;
-	height: 100%;
-}
-
-/* General sidebar styles */
-.bm-menu {
-	background: #ffffff;
-	padding: 2.5em 1.5em 0;
-	font-size: 1.15em;
-}
-
-/* Morph shape necessary with bubble or elastic */
-.bm-morph-shape {
-	fill: #373a47;
-}
-
-/* Wrapper for item list */
-.bm-item-list {
-	color: #b8b7ad;
-	padding: 1.5em 0.8em;
-	height: calc(100% - 3em) !important;
-}
-
-/* Individual item */
-.bm-item {
-	display: inline-block;
-	margin: 15px 0;
-	font-weight: 700;
-}
-
-/* Styling of overlay */
-.bm-overlay {
-	background: rgba(0, 0, 0, 0.3);
-}
-
 .app-logo {
-	max-width: 180px;
+	width: 150px;
 	padding: 10px 15px;
 }
 
@@ -89,7 +13,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 .nav-links {
 	margin: 0 10px;
-	display: none;
+	display: inline-block;
+	font-size: 10px;
 }
 
 .nav-links a {
@@ -104,10 +29,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 @media (min-width: 600px) {
-	.bm-burger-button {
-		display: none;
-	}
-
 	.nav-links {
 		display: inline-block;
 	}
