@@ -1,25 +1,37 @@
+import userEvent from '@testing-library/user-event';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import './VideoCard.css';
 const VideoCard = ({ video }) => {
-	const secondarySrc = (e) => {
-		console.log('got here');
-		e.target.src = `https://img.youtube.com/vi/${video.ytId}/0.jpg`;
+	const history = useHistory();
+
+	const handleClick = (e) => {
+		if (e.target.id !== 'series-link') {
+			history.push(`/videos/${video.id}`);
+		}
 	};
+
 	return (
-		<Link to={`/videos/${video.id}`} className='video-card'>
-			<div className='video-card-thumbnail-container'>
-				<img
-					src={`https://img.youtube.com/vi/${video.ytId}/maxresdefault.jpg`}
-					onError={secondarySrc}
-					alt=''
-				/>
-			</div>
+		<div className='video-card' onClick={handleClick}>
+			<div
+				className='video-card-image'
+				style={{
+					backgroundImage: `url('https://img.youtube.com/vi/${video.ytId}/mqdefault.jpg')`,
+				}}></div>
 			<div className='video-card-info'>
-				<h3>{video.title}</h3>
-				<p>{video.description}</p>
+				<h1 className='video-card-title'>
+					{video.title}
+					<span>#9</span>
+				</h1>
+				<Link
+					id='series-link'
+					className='video-card-series'
+					to={`/series/${video.seriesId}`}>
+					{video.series}
+				</Link>
+				<p className='video-card-description'>{video.description}</p>
 			</div>
-		</Link>
+		</div>
 	);
 };
 
