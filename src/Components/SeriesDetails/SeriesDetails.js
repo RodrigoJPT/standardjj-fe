@@ -29,7 +29,7 @@ const SeriesDetails = ({ id }) => {
 					<h1>{series.name}</h1>
 				</div>
 			</div>
-			<ul style={{ listStyleType: 'none', padding: '0', margin: '0 5px' }}>
+			<ul style={{ listStyleType: 'none', padding: '0', margin: '0' }}>
 				{series.videos.map((video) => (
 					<li key={video.id}>
 						<VideoCard video={video} />

@@ -7,16 +7,19 @@ const VideoCard = ({ video }) => {
 		e.target.src = `https://img.youtube.com/vi/${video.ytId}/0.jpg`;
 	};
 	return (
-		<div className='video-card-container'>
-			<Link to={`/videos/${video.id}`} className='video-card'>
+		<Link to={`/videos/${video.id}`} className='video-card'>
+			<div className='video-card-thumbnail-container'>
 				<img
 					src={`https://img.youtube.com/vi/${video.ytId}/maxresdefault.jpg`}
 					onError={secondarySrc}
 					alt=''
 				/>
+			</div>
+			<div className='video-card-info'>
 				<h3>{video.title}</h3>
-			</Link>
-		</div>
+				<p>{video.description}</p>
+			</div>
+		</Link>
 	);
 };
 
