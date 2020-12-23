@@ -25,8 +25,10 @@ const SeriesDetails = ({ id }) => {
 				className='series-hero'
 				style={{ backgroundImage: `url('${series.thumbnail}')` }}>
 				<div className='series-hero-overlay'>
-					<h3>{series.description}</h3>
-					<h1>{series.name}</h1>
+					<div className='series-hero-info'>
+						<h1>{series.name}</h1>
+						<h3>{series.description}</h3>
+					</div>
 				</div>
 			</div>
 			<ul style={{ listStyleType: 'none', padding: '0', margin: '0' }}>
