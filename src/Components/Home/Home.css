@@ -7,15 +7,3 @@
 .home-page h2 {
 	color: black;
 }
-
-@media (min-width: 700px) {
-	.home-page ul {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(350px, max-content));
-		grid-template-rows: repeat(auto-fit, minmax(250px, max-content));
-		gap: 10px;
-	}
-	.home-page {
-		max-width: 1110px;
-	}
-}
