@@ -17,9 +17,9 @@ import VideoViewer from './Components/VideoViewer/VideoViewer';
 
 function App() {
 	return (
-		<div className='App' id='outer-container'>
+		<div className='App'>
 			<Nav />
-			<main id='page-wrap'>
+			<main>
 				<PrivateRoute path='/' exact component={Home} />
 				<PrivateRoute path='/series' exact component={Series} />
 				<Route
