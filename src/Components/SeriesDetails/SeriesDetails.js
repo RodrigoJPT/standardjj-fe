@@ -21,8 +21,14 @@ const SeriesDetails = ({ id }) => {
 
 	return (
 		<div className='series-detail-container'>
-			<h1 className='page-header'>{series.name}</h1>
-			<h4 className='page-header'>{series.description}</h4>
+			<div
+				className='series-hero'
+				style={{ backgroundImage: `url('${series.thumbnail}')` }}>
+				<div className='series-hero-overlay'>
+					<h3>{series.description}</h3>
+					<h1>{series.name}</h1>
+				</div>
+			</div>
 			<ul style={{ listStyleType: 'none', padding: '0', margin: '0 5px' }}>
 				{series.videos.map((video) => (
 					<li key={video.id}>
