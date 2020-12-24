@@ -20,7 +20,8 @@
 		{
 			"src": "/assets/270x270.png",
 			"type": "image/png",
-			"sizes": "270x270"
+			"sizes": "270x270",
+			"purpose": "any maskable"
 		},
 		{
 			"src": "logo512.png",
