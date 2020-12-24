@@ -22,7 +22,11 @@ const VideoCard = ({ video }) => {
 			<div className='video-card-info'>
 				<h1 className='video-card-title'>
 					{video.title}
+<<<<<<< HEAD
 					<span>#9</span>
+=======
+					<span>{video.number}</span>
+>>>>>>> dev
 				</h1>
 				<Link
 					id='series-link'
