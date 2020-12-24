@@ -1,3 +1,10 @@
 .video-description {
-	margin: 7px;
+	margin: 0 7px 3px 7px;
+	font-size: 16px;
+}
+
+.viewer-title {
+	margin: 10px 7px 0 7px;
+	font-size: 25px;
+	color: #42347b;
 }

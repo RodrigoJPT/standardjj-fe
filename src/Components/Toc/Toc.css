@@ -2,19 +2,25 @@
 	text-decoration: none;
 	list-style: none;
 	padding: 0;
-	margin: 10px;
+	margin: 0 10px;
 }
 
 .toc ul li {
-	margin: 10px 0;
-	padding: 20px 10px;
+	margin: 3px 0;
+	padding: 10px;
 	background: white;
 	box-shadow: 0 5px 6px -6px black;
 	display: flex;
 	justify-content: space-between;
-	font-size: 20px;
+	font-size: 15px;
 	font-weight: 700;
 	color: #42347b;
+}
+
+.toc-title {
+	color: #42347b;
+	font-size: 20px;
+	margin: 0 7px;
 }
 
 @media (hover: hover) {

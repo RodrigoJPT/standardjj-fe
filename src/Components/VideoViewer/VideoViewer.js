@@ -15,7 +15,6 @@ const VideoViewer = ({ id }) => {
 		const baseUrl = process.env.REACT_APP_API_URL;
 		axios.get(`${baseUrl}/videos/${id}`).then((res) => {
 			setVideo(res.data);
-			console.log(res.data);
 		});
 	}, []);
 
@@ -42,7 +41,7 @@ const VideoViewer = ({ id }) => {
 				onPlay={() => setPlaying(true)}
 				onSeek={() => setPlaying(true)}
 			/>
-			<h1 className='page-header'>{video.title}</h1>
+			<h1 className='viewer-title'>{video.title}</h1>
 			<p className='video-description'>{video.description}</p>
 			<Toc contents={video.toc} handleClick={goTo} />
 		</>

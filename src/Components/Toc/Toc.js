@@ -10,7 +10,7 @@ const Toc = ({ contents, handleClick }) => {
 	};
 	return (
 		<div className='toc'>
-			<h2 className='page-header'>Table of contents:</h2>
+			<h1 className='toc-title'>Table of contents:</h1>
 			<ul>
 				{contents.map((item) => {
 					const split = item.split(' ');
@@ -18,8 +18,8 @@ const Toc = ({ contents, handleClick }) => {
 					const seconds = convertToSeconds(timestamp);
 					return (
 						<li key={seconds} id={seconds} onClick={handleClick}>
-							<span>{split.join(' ')}</span>
-							<span>{timestamp}</span>
+							<span id={seconds}>{split.join(' ')}</span>
+							<span id={seconds}>{timestamp}</span>
 						</li>
 					);
 				})}
