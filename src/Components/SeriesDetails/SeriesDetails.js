@@ -15,7 +15,7 @@ const SeriesDetails = ({ id }) => {
 				return a.number - b.number;
 			});
 
-			setSeries({ ...series, videos: videos });
+			setSeries({ ...res.data, videos: videos });
 		});
 	}, []);
 

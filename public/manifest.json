@@ -6,6 +6,26 @@
 			"src": "favicon.png",
 			"sizes": "32x32",
 			"type": "image/x-icon"
+		},
+		{
+			"src": "/assets/180x180.png",
+			"type": "image/png",
+			"sizes": "180x180"
+		},
+		{
+			"src": "/assets/192x192.png",
+			"type": "image/png",
+			"sizes": "192x192"
+		},
+		{
+			"src": "/assets/270x270.png",
+			"type": "image/png",
+			"sizes": "270x270"
+		},
+		{
+			"src": "logo512.png",
+			"type": "image/png",
+			"sizes": "512x512"
 		}
 	],
 	"start_url": ".",
