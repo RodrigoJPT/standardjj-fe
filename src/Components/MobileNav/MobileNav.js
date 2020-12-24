@@ -17,24 +17,27 @@ const MobileNav = () => {
 	};
 
 	return (
-		<nav
-			id='mobile-nav'
-			className='mobile-nav-links'
-			ref={nav}
-			onClick={setActive}>
-			<Link id='0' to='/' className='mobile-nav-active'>
-				<i id='0' className='fas fa-home'></i>
-				<span id='0'>home</span>
-			</Link>
-			<Link id='1' to='/series'>
-				<i id='1' className='fas fa-th-list'></i>
-				<span id='1'>series</span>
-			</Link>
-			<Link id='2' to='/account'>
-				<i id='2' className='fas fa-user'></i>
-				<span id='2'>account</span>
-			</Link>
-		</nav>
+		<div className='mobile-nav-container'>
+			<div className='phantom'></div>
+			<nav
+				id='mobile-nav'
+				className='mobile-nav-links'
+				ref={nav}
+				onClick={setActive}>
+				<Link id='0' to='/' className='mobile-nav-active'>
+					<i id='0' className='fas fa-home'></i>
+					<span id='0'>home</span>
+				</Link>
+				<Link id='1' to='/series'>
+					<i id='1' className='fas fa-th-list'></i>
+					<span id='1'>series</span>
+				</Link>
+				<Link id='2' to='/account'>
+					<i id='2' className='fas fa-user'></i>
+					<span id='2'>account</span>
+				</Link>
+			</nav>
+		</div>
 	);
 };
 

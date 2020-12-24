@@ -11,7 +11,11 @@ const SeriesDetails = ({ id }) => {
 	useEffect(() => {
 		const baseUrl = process.env.REACT_APP_API_URL;
 		axios.get(`${baseUrl}/series/${id}`).then((res) => {
-			setSeries(res.data);
+			const videos = [...res.data.videos].sort((a, b) => {
+				return a.number - b.number;
+			});
+
+			setSeries({ ...series, videos: videos });
 		});
 	}, []);
 

@@ -20,15 +20,12 @@ const VideoCard = ({ video }) => {
 				<i className='far fa-play-circle'></i>
 			</div>
 			<div className='video-card-info'>
-				<h1 className='video-card-title'>
-					{video.title}
-					<span>{video.number}</span>
-				</h1>
+				<h1 className='video-card-title'>{video.title}</h1>
 				<Link
 					id='series-link'
 					className='video-card-series'
 					to={`/series/${video.seriesId}`}>
-					{video.series}
+					{video.series} #{video.number}
 				</Link>
 				<p className='video-card-description'>{video.description}</p>
 			</div>
