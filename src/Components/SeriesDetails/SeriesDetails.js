@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Spinner from '../Spinner/Spinner';
 import axios from 'axios';
 import VideoCard from '../VideoCard/VideoCard';
+import { Link } from 'react-router-dom';
 import './SeriesDetails.css';
 
 const SeriesDetails = ({ id }) => {
@@ -29,6 +30,10 @@ const SeriesDetails = ({ id }) => {
 				className='series-hero'
 				style={{ backgroundImage: `url('${series.thumbnail}')` }}>
 				<div className='series-hero-overlay'>
+					<Link to='/series' className='series-detail-back'>
+						<i className='fas fa-chevron-left'></i>
+						Back
+					</Link>
 					<div className='series-hero-info'>
 						<h1>{series.name}</h1>
 						<h3>{series.description}</h3>
