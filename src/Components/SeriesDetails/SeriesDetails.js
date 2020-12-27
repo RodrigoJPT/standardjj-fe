@@ -1,23 +1,29 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Spinner from '../Spinner/Spinner';
 import axios from 'axios';
 import VideoCard from '../VideoCard/VideoCard';
 import { Link } from 'react-router-dom';
 import './SeriesDetails.css';
+import { AppContext } from '../../AppContext';
 
 const SeriesDetails = ({ id }) => {
 	const [series, setSeries] = useState(null);
+	const { currentSeries, setCurrentSeries } = useContext(AppContext);
 
 	useEffect(() => {
 		const baseUrl = process.env.REACT_APP_API_URL;
-		axios.get(`${baseUrl}/series/${id}`).then((res) => {
-			const videos = [...res.data.videos].sort((a, b) => {
-				return a.number - b.number;
+		if (currentSeries.id === id) {
+			setSeries(currentSeries);
+		} else {
+			axios.get(`${baseUrl}/series/${id}`).then((res) => {
+				const videos = [...res.data.videos].sort((a, b) => {
+					return a.number - b.number;
+				});
+				setSeries({ ...res.data, videos: videos });
+				setCurrentSeries({ ...res.data, videos: videos });
 			});
-
-			setSeries({ ...res.data, videos: videos });
-		});
+		}
 	}, []);
 
 	if (!series) {
@@ -30,7 +36,7 @@ const SeriesDetails = ({ id }) => {
 				className='series-hero'
 				style={{ backgroundImage: `url('${series.thumbnail}')` }}>
 				<div className='series-hero-overlay'>
-					<Link to='/series' className='series-detail-back'>
+					<Link to='/series' className='back-page-link'>
 						<i className='fas fa-chevron-left'></i>
 						Back
 					</Link>
@@ -41,7 +47,7 @@ const SeriesDetails = ({ id }) => {
 				</div>
 			</div>
 			<ul style={{ listStyleType: 'none', padding: '0', margin: '0' }}>
-				{series.videos.map((video) => (
+				{series.videos.map((video, index) => (
 					<li key={video.id}>
 						<VideoCard video={video} />
 					</li>

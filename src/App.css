@@ -16,12 +16,6 @@ a {
 	text-decoration: none;
 }
 
-@media (hover: hover) {
-	a:hover {
-		text-decoration: underline;
-	}
-}
-
 button {
 	background-color: #42347b;
 	color: white;
@@ -70,9 +64,30 @@ h4 {
 	padding: 0;
 }
 
+.fa-chevron-left {
+	font-size: 25px;
+	padding: 5px;
+}
+
+.back-page-link {
+	margin: 2px;
+	display: flex;
+	align-items: center;
+	color: white;
+}
+
 @media (min-width: 500px) {
 	.main {
 		max-height: calc(100vh - 80px);
 		overflow-y: auto;
+	}
+}
+
+@media (hover: hover) {
+	a:hover {
+		text-decoration: underline;
+	}
+	.back-page-link:hover {
+		text-decoration: none;
 	}
 }

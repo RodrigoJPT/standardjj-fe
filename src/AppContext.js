@@ -4,7 +4,7 @@ export const AppContext = createContext();
 
 export const AppContextProvider = ({ children }) => {
 	const [storedSeries, setStoredSeries] = useState(null);
-	const [currentSeries, setCurrentSeries] = useState(null);
+	const [currentSeries, setCurrentSeries] = useState({});
 
 	return (
 		<AppContext.Provider

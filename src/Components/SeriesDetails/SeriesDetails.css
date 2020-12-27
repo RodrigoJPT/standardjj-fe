@@ -42,24 +42,6 @@
 	max-width: 900px;
 }
 
-.fa-chevron-left {
-	font-size: 25px;
-	padding: 5px;
-}
-
-.series-detail-back {
-	margin: 2px;
-	display: flex;
-	align-items: center;
-	color: white;
-}
-
-@media (hover: hover) {
-	.series-detail-back:hover {
-		text-decoration: none;
-	}
-}
-
 @media (max-width: 400px) {
 	.series-hero-overlay h1 {
 		font-size: 20px;

@@ -33,7 +33,7 @@ function App() {
 				{/* <Route path='/passwordreset' component={PasswordReset} /> */}
 				<Route
 					path='/videos/:id'
-					render={(props) => <VideoViewer id={props.match.params.id} />}
+					component={(props) => <VideoViewer id={props.match.params.id} />}
 				/>
 			</main>
 			<MobileNav />
