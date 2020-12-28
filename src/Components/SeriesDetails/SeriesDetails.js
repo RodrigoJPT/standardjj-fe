@@ -6,23 +6,29 @@ import VideoCard from '../VideoCard/VideoCard';
 import { Link } from 'react-router-dom';
 import './SeriesDetails.css';
 import { AppContext } from '../../AppContext';
+import { useHistory } from 'react-router-dom';
 
 const SeriesDetails = ({ id }) => {
 	const [series, setSeries] = useState(null);
 	const { currentSeries, setCurrentSeries } = useContext(AppContext);
-
+	const history = useHistory();
 	useEffect(() => {
 		const baseUrl = process.env.REACT_APP_API_URL;
 		if (currentSeries.id === id) {
 			setSeries(currentSeries);
 		} else {
-			axios.get(`${baseUrl}/series/${id}`).then((res) => {
-				const videos = [...res.data.videos].sort((a, b) => {
-					return a.number - b.number;
+			axios
+				.get(`${baseUrl}/series/${id}`)
+				.then((res) => {
+					const videos = [...res.data.videos].sort((a, b) => {
+						return a.number - b.number;
+					});
+					setSeries({ ...res.data, videos: videos });
+					setCurrentSeries({ ...res.data, videos: videos });
+				})
+				.catch(() => {
+					history.push('/oops');
 				});
-				setSeries({ ...res.data, videos: videos });
-				setCurrentSeries({ ...res.data, videos: videos });
-			});
 		}
 	}, []);
 

@@ -5,7 +5,7 @@ import Spinner from '../Spinner/Spinner';
 import axios from 'axios';
 import './VideoViewer.css';
 import Toc from '../Toc/Toc';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { AppContext } from '../../AppContext';
 
 const VideoViewer = ({ id }) => {
@@ -13,6 +13,7 @@ const VideoViewer = ({ id }) => {
 	const [video, setVideo] = useState(null);
 	const [playing, setPlaying] = useState(false);
 	const { currentSeries, setCurrentSeries } = useContext(AppContext);
+	const history = useHistory();
 
 	useEffect(() => {
 		const baseUrl = process.env.REACT_APP_API_URL;
@@ -32,6 +33,9 @@ const VideoViewer = ({ id }) => {
 					return a.number - b.number;
 				});
 				setCurrentSeries({ ...res.data, videos: videos });
+			})
+			.catch(() => {
+				history.push('/oops');
 			});
 	}, []);
 

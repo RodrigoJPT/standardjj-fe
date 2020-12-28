@@ -15,6 +15,7 @@ import UserPage from './Components/UserPage/UserPage';
 import PasswordReset from './Components/PasswordReset/PasswordReset';
 import VideoViewer from './Components/VideoViewer/VideoViewer';
 import MobileNav from './Components/MobileNav/MobileNav';
+import NotFound from './Components/NotFound/NotFound';
 
 function App() {
 	return (
@@ -29,8 +30,9 @@ function App() {
 				/>
 				<Route path='/signup' component={SignUp} />
 				<Route path='/login' component={LogIn} />
-				<PrivateRoute path='/account' component={UserPage} />
 				<Route path='/passwordreset' component={PasswordReset} />
+				<Route path='/oops' component={NotFound} />
+				<PrivateRoute path='/account' component={UserPage} />
 				<Route
 					path='/videos/:id'
 					component={(props) => <VideoViewer id={props.match.params.id} />}
