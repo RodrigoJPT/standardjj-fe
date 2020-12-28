@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import './Home.css';
 import Spinner from '../Spinner/Spinner';
 import { useHistory } from 'react-router-dom';
@@ -8,6 +8,13 @@ const Home = () => {
 	const { user } = useContext(AuthContext);
 	const history = useHistory();
 	const [install, setInstall] = useState(false);
+	const [alreadyInstalled, setAlreadyInstalled] = useState(false);
+
+	useEffect(() => {
+		navigator
+			.getInstalledRelatedApps()
+			.then((res) => setAlreadyInstalled(!!res.length));
+	}, []);
 
 	const revealInstall = () => {
 		setInstall(true);
@@ -20,6 +27,11 @@ const Home = () => {
 	if (!user) {
 		return <Spinner />;
 	}
+
+	if (alreadyInstalled) {
+		history.push('/series');
+	}
+
 	return (
 		<div className='home-page'>
 			<div
