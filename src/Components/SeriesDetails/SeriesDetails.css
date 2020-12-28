@@ -50,6 +50,10 @@
 	.series-hero-overlay h3 {
 		font-size: 10px;
 	}
+	.series-hero .back-page-link,
+	.series-hero .fa-chevron-left {
+		font-size: 12px;
+	}
 }
 
 @media (min-width: 800px) {

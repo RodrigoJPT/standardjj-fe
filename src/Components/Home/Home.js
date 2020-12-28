@@ -47,7 +47,28 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
-			<h4 className='home-start-header'>Getting started:</h4>
+			<div className='home-intro'>
+				<h1 className='page-header'>
+					Standard’s mission is to make Brazilian Jiu Jitsu and Submission
+					Grappling available to everyone.
+				</h1>
+				<p>
+					Standard Jiu Jitsu is an up and coming BJJ program located in
+					Rockville, MD.&nbsp;The programs at Standard&nbsp;BJJ
+					are&nbsp;designed as complete grappling programs with something to
+					offer every practitioner, from the&nbsp;beginner to the advanced
+					student. We offer both gi and no-gi classes and offer mat times
+					everyday of the week.
+				</p>
+				<p>
+					Our system advances physical and mental fitness through intense and
+					focused training sessions. Deliberate skill-set development is
+					achieved through principle-based learning techniques. We keep our
+					classes small and our attention individualized to help each person get
+					the most from their training.
+				</p>
+			</div>
+			<h4 className='home-start-header'>Get started with the app:</h4>
 			{install ? (
 				<div className='home-install'>
 					<p>
@@ -79,8 +100,8 @@ const Home = () => {
 				</div>
 			) : (
 				<div className='home-start'>
-					<button onClick={revealInstall}>Install App</button>
-					<button onClick={goToSeries}>Continue in Browser</button>
+					<button onClick={revealInstall}>Install</button>
+					<button onClick={goToSeries}>Use app in browser</button>
 				</div>
 			)}
 		</div>

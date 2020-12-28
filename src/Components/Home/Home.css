@@ -17,6 +17,15 @@
 	background-position: center;
 }
 
+.home-intro {
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.home-intro * {
+	margin: 7px;
+}
+
 .home-hero-overlay {
 	display: flex;
 	margin: 0;
@@ -75,6 +84,9 @@
 
 	.home-start-header {
 		font-size: 20px;
+	}
+	.home-intro {
+		font-size: 70%;
 	}
 }
 
