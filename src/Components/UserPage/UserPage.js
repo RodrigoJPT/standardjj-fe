@@ -13,10 +13,14 @@ const UserPage = () => {
 	const handleSignOut = () => {
 		auth.signOut();
 	};
+
 	return (
 		<div style={{ margin: '0 auto', padding: '10px' }}>
 			<h2>{user.username}</h2>
 			<h3>{user.email}</h3>
+			<button onClick={() => history.push('/passwordreset')}>
+				Reset Password
+			</button>
 			<button onClick={handleSignOut}>Sign out</button>
 		</div>
 	);

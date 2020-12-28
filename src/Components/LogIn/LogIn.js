@@ -3,7 +3,7 @@ import '../SignUp/SignUp.css';
 import FormField from '../FormField/FormField';
 import { AuthContext } from '../../Auth';
 import { auth } from '../../fb';
-import { Redirect, withRouter } from 'react-router-dom';
+import { Redirect, withRouter, Link } from 'react-router-dom';
 import Spinner from '../Spinner/Spinner';
 
 const LogIn = () => {
@@ -98,12 +98,12 @@ const LogIn = () => {
 				<button className='err' type='click' onClick={handleCancel}>
 					Cancel
 				</button>
-				{/* <p style={{ display: 'block', margin: '3px', textAlign: 'center' }}>
+				<p style={{ display: 'block', margin: '3px', textAlign: 'center' }}>
 					Don't have an account?&nbsp;
-					<a href='/login'>Sign up</a>
+					<Link to='/login'>Sign up</Link>
 					<br />
-					<a href='/login'>Forgot Password?</a>
-				</p> */}
+					<Link to='/passwordreset'>Forgot Password?</Link>
+				</p>
 			</form>
 		</div>
 	);
