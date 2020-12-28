@@ -100,7 +100,7 @@ const LogIn = () => {
 				</button>
 				<p style={{ display: 'block', margin: '3px', textAlign: 'center' }}>
 					Don't have an account?&nbsp;
-					<Link to='/login'>Sign up</Link>
+					<Link to='/signup'>Sign up</Link>
 					<br />
 					<Link to='/passwordreset'>Forgot Password?</Link>
 				</p>

@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 import './SignUp.css';
 import FormField from '../FormField/FormField';
-import { firestore, auth } from '../../fb';
+import { auth } from '../../fb';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import Spinner from '../Spinner/Spinner';
 
 //DUMMY COMPONENT FOR STYLING, DO NOT USE, FORM FIELDS WILL BE CONVERTED TO CUSTOM COMPONENTS
 const SignUp = () => {
 	const blankForm = {
+		name: '',
 		username: '',
 		email: '',
 		password: '',
 		confirm: '',
+		key: '',
 	};
 	const [formState, setFormState] = useState(blankForm);
 	const [errors, setErrors] = useState({});
@@ -20,10 +23,12 @@ const SignUp = () => {
 
 	function doubleCheckForm() {
 		const errs = {};
+		errs.name = formState.name ? '' : 'Required';
 		errs.username = formState.username ? '' : 'Required';
 		errs.email = formState.email ? '' : 'Required';
 		errs.password = formState.password ? '' : 'Required';
 		errs.confirm = formState.confirm ? '' : 'Required';
+		errs.key = formState.key ? '' : 'Required';
 		setErrors({ ...errs });
 		if (!errs.username && !errs.email && !errs.confirm && !errs.password) {
 			return true;
@@ -44,6 +49,7 @@ const SignUp = () => {
 			});
 		} else {
 			setErrors({
+				...errors,
 				username: '',
 			});
 		}
@@ -117,54 +123,49 @@ const SignUp = () => {
 		e.preventDefault();
 		setSent(true);
 		if (doubleCheckForm()) {
-			let userId, token;
-			firestore
-				.collection('/users')
-				.where('username', '==', formState.username)
-				.get()
-				.then((snapshot) => {
-					if (snapshot.length) {
-						setErrors({ username: `Username already taken` });
-					} else {
-						return auth.createUserWithEmailAndPassword(
-							formState.email,
-							formState.password
-						);
+			const baseUrl = process.env.REACT_APP_API_URL;
+			axios
+				.post(`${baseUrl}/signup`, formState)
+				.then((res) => {
+					if (res.status === 400) {
+						throw Error(res);
 					}
+					return res;
 				})
-				.then((data) => {
-					userId = data.user.uid;
-					return data.user.getIdToken();
-				})
-				.then((newToken) => {
-					token = newToken;
-					const userInfo = {
-						username: formState.username,
-						email: formState.email,
-						createdAt: new Date().toISOString(),
-						userId: userId,
-					};
-					return firestore.doc(`users/${userId}`).set(userInfo);
-				})
-				.then(() => {
-					axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+				.then((res) => {
+					auth.signInWithEmailAndPassword(formState.email, formState.password);
 					history.push('/');
 				})
 				.catch((err) => {
-					console.error(err);
-					if (err.code === 'auth/email-already-in-use') {
-						setErrors({ email: 'Email already in use' });
-					}
+					console.log('bad');
+					console.log({ ...err });
+					setErrors({ ...errors, ...err.response.data });
+					setSent(false);
 				});
 		} else {
 			setSent(false);
 		}
 	}
 
+	if (sent) {
+		return <Spinner />;
+	}
+
 	return (
 		<div className='container sign-up-box'>
 			<form className='form-stack sign-up-form' onSubmit={handleSubmit}>
 				<h1>Sign Up</h1>
+				<label htmlFor='key'>Name:</label>
+				<FormField
+					type='text'
+					id='name'
+					value={formState.name}
+					err={errors.name}
+					handleChange={(e) => {
+						setFormState({ ...formState, name: e.target.value });
+						setErrors({ ...errors, name: '' });
+					}}
+				/>
 				<label htmlFor='username'>Username:</label>
 				<FormField
 					type='text'
@@ -196,6 +197,17 @@ const SignUp = () => {
 					value={formState.confirm}
 					err={errors.confirm}
 					handleChange={validatePassword}
+				/>
+				<label htmlFor='key'>Student Key:</label>
+				<FormField
+					type='text'
+					id='key'
+					value={formState.key}
+					err={errors.key}
+					handleChange={(e) => {
+						setFormState({ ...formState, key: e.target.value });
+						setErrors({ ...errors, key: '' });
+					}}
 				/>
 				<button type='submit' disabled={sent}>
 					Sign Up
