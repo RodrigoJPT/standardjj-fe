@@ -19,7 +19,7 @@ const SeriesList = () => {
 				setStoredSeries(res.data);
 			});
 		}
-	}, []);
+	}, [storedSeries, setStoredSeries]);
 	if (!series) {
 		return <Spinner />;
 	}
