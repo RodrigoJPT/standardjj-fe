@@ -8,13 +8,13 @@ const Home = () => {
 	const { user } = useContext(AuthContext);
 	const history = useHistory();
 	const [install, setInstall] = useState(false);
-	const [alreadyInstalled, setAlreadyInstalled] = useState(false);
+	/* const [alreadyInstalled, setAlreadyInstalled] = useState(false);
 
 	useEffect(() => {
 		navigator
 			.getInstalledRelatedApps()
 			.then((res) => setAlreadyInstalled(!!res.length));
-	}, []);
+	}, []); */
 
 	const revealInstall = () => {
 		setInstall(true);
@@ -28,9 +28,9 @@ const Home = () => {
 		return <Spinner />;
 	}
 
-	if (alreadyInstalled) {
+	/* if (alreadyInstalled) {
 		history.push('/series');
-	}
+	} */
 
 	return (
 		<div className='home-page'>
