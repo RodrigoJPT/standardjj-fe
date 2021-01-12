@@ -65,11 +65,21 @@ const LogIn = () => {
 					return <Redirect to='/' />;
 				})
 				.catch((err) => {
-					console.error(err);
+					if (err.code === 'auth/user-not-found') {
+						setErrors({
+							...errors,
+							email: 'User not found',
+						});
+					}
+					if (err.code === 'auth/wrong-password') {
+						setErrors({
+							...errors,
+							password: 'Wrong password',
+						});
+					}
 					setSent(false);
 				});
 		}
-		//TODO: MORE SOPHISTICATED ERROR HANDLING
 	}
 
 	return (
