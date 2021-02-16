@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Card = ({ video, styles }) => {
 	return (
-		<Link to={`/series/${video.seriesId}`} className={styles.card}>
+		<Link to={`/videos/${video.id}`} className={styles.card}>
 			<img
 				className={styles.thumbnail}
 				src={`https://img.youtube.com/vi/${video.ytId}/mqdefault.jpg`}

@@ -3,7 +3,7 @@
 is a good secure way for only students to create accounts */
 
 import './App.css';
-import { Route } from 'react-router-dom';
+import { Route, useLocation } from 'react-router-dom';
 import Home from './Components/Home/Home';
 import Series from './Components/Series/Series';
 import Nav from './Components/Nav/Nav';
@@ -18,10 +18,11 @@ import MobileNav from './Components/MobileNav/MobileNav';
 import NotFound from './Components/NotFound/NotFound';
 
 function App() {
+	const location = useLocation();
 	return (
 		<div className='App'>
 			<Nav />
-			<main>
+			<main key={location.pathname}>
 				<PrivateRoute path='/' exact component={Home} />
 				<PrivateRoute path='/series' exact component={Series} />
 				<Route
