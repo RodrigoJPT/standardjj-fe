@@ -53,7 +53,7 @@ const VideoViewer = ({ id }) => {
 	};
 
 	return (
-		<>
+		<div className='video-viewer'>
 			<ReactPlayer
 				className='react-player'
 				ref={playerRef}
@@ -95,7 +95,7 @@ const VideoViewer = ({ id }) => {
 					</Link>
 				) : null}
 			</div>
-		</>
+		</div>
 	);
 };
 
