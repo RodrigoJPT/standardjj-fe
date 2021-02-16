@@ -7,6 +7,7 @@ import './VideoViewer.css';
 import Toc from '../Toc/Toc';
 import { Link, useHistory } from 'react-router-dom';
 import { AppContext } from '../../AppContext';
+import HorizontalGallery from '../HorizontalGallery/HorizontalGallery';
 
 const VideoViewer = ({ id }) => {
 	const playerRef = useRef();
@@ -69,6 +70,10 @@ const VideoViewer = ({ id }) => {
 			<h1 className='viewer-title'>{video.title}</h1>
 			<p className='video-description'>{video.description}</p>
 			<Toc contents={video.toc} handleClick={goTo} />
+			<h2 className='viewer-title'>More In This Series:</h2>
+			<HorizontalGallery
+				videos={currentSeries.videos.filter((vid) => vid.id !== video.id)}
+			/>
 			<div className='viewer-nav-links'>
 				{prevIndex ? (
 					<Link
@@ -83,7 +88,7 @@ const VideoViewer = ({ id }) => {
 					to={`/series/${video.seriesId}`}
 					className='back-page-link'
 					style={{ color: '#42347b', fontWeight: '700', margin: '0 auto' }}>
-					Back To Series
+					Back To Series Page
 				</Link>
 				{!!nextIndex ? (
 					<Link
