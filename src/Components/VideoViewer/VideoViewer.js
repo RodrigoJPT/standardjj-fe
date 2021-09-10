@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useRef, useState, useEffect, useContext } from 'react';
 import ReactPlayer from 'react-player';
 import Spinner from '../Spinner/Spinner';
@@ -38,6 +37,7 @@ const VideoViewer = ({ id }) => {
 			.catch(() => {
 				history.push('/oops');
 			});
+	/* eslint-disable-next-line */
 	}, []);
 
 	if (!video || !currentSeries.videos) {

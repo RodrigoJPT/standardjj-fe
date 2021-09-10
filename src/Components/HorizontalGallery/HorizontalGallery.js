@@ -30,7 +30,7 @@ const HorizontalGallery = ({ videos }) => {
 			</button>
 			<div className={styles.gallery} ref={gallery}>
 				{videos.map((video) => (
-					<Card video={video} styles={styles} />
+					<Card video={video} styles={styles} key={video.ytId} />
 				))}
 			</div>
 			<button id='right' onClick={scroll} className={styles.scroller}>

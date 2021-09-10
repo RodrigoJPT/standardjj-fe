@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect, useContext } from 'react';
 import Spinner from '../Spinner/Spinner';
 import axios from 'axios';
@@ -30,6 +29,7 @@ const SeriesDetails = ({ id }) => {
 					history.push('/oops');
 				});
 		}
+	/* eslint-disable-next-line */
 	}, []);
 
 	if (!series) {

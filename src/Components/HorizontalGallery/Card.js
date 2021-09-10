@@ -9,7 +9,7 @@ const Card = ({ video, styles }) => {
 				src={`https://img.youtube.com/vi/${video.ytId}/mqdefault.jpg`}
 				alt={video.title}
 			/>
-			<p class={styles.title}>{`#${video.number} ${video.title}`}</p>
+			<p className={styles.title}>{`#${video.number} ${video.title}`}</p>
 		</Link>
 	);
 };

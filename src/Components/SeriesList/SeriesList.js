@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState, useContext } from 'react';
 import Spinner from '../Spinner/Spinner';
 import axios from 'axios';
@@ -26,6 +25,7 @@ const SeriesList = () => {
 					history.push('/oops');
 				});
 		}
+	/* eslint-disable-next-line */
 	}, []);
 	if (!series) {
 		return <Spinner />;
