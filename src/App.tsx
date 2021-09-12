@@ -16,7 +16,7 @@ import PasswordReset from './Components/PasswordReset/PasswordReset';
 import VideoViewer from './Components/VideoViewer/VideoViewer';
 import MobileNav from './Components/MobileNav/MobileNav';
 import NotFound from './Components/NotFound/NotFound';
-import Admin from './Components/Admin/Admin'
+import {Admin, CreateVideo } from './Components/Admin/'
 
 function App() {
 	const location = useLocation();
@@ -30,16 +30,17 @@ function App() {
 					path='/series/:id'
 					render={(props: RouteComponentProps<any>) => <SeriesDetails id={props.match.params.id} />}
 				/>
-				<Route path='/signup' component={SignUp} />
-				<Route path='/login' component={LogIn} />
-				<Route path='/passwordreset' component={PasswordReset} />
-				<Route path='/oops' component={NotFound} />
-				<PrivateRoute path='/account' component={UserPage} />
-				<PrivateRoute path='/admin' component={Admin} />
+				<Route path='/signup' exact component={SignUp} />
+				<Route path='/login' exact component={LogIn} />
+				<Route path='/passwordreset' exact component={PasswordReset} />
+				<Route path='/oops' exact component={NotFound} />
+				<PrivateRoute path='/account' exact component={UserPage} />
 				<PrivateRoute
 					path='/videos/:id'
 					component={(props: RouteComponentProps<any>) => <VideoViewer id={props.match.params.id} />}
 				/>
+				<PrivateRoute path='/admin' exact component={Admin} />
+				<PrivateRoute path='/admin/videos/create' exact component={CreateVideo} />
 			</main>
 			<MobileNav />
 		</div>

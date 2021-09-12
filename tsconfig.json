@@ -3,7 +3,6 @@
     "jsx": "react-jsx",
     "resolveJsonModule": true,
     "allowJs": true,
-    "strict": true,
     "module": "esnext",
     "target": "es6",
     "rootDir": "./",
@@ -19,7 +18,8 @@
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "moduleResolution": "node",
-    "isolatedModules": true
+    "isolatedModules": true,
+    "strict": false
   },
   "include": [
     "src/**/*"

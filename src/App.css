@@ -38,6 +38,10 @@ button:hover {
 	cursor: pointer;
 }
 
+button:disabled {
+	filter: brightness(0.6);
+}
+
 main {
 	margin: 0 auto;
 }
