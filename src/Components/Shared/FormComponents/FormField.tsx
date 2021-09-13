@@ -3,7 +3,7 @@ import React from 'react';
 import { Field, FieldConfig } from 'formik'
 
 export interface FormFieldProps extends FieldConfig<any> {
-    label: string;
+    label?: string;
 }
 
 export const FormField: React.FC<FormFieldProps> = ({label, ...rest}) => {
