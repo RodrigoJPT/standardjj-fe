@@ -1,0 +1,16 @@
+.field {
+    width: 300px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.textarea {
+    height: 100px;
+    resize: none;
+}
+
+.fieldset {
+    border: none;
+    max-width: 400px;
+    margin: 0 10px;
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { FieldInputProps } from 'formik';
-import { FormField } from '../Shared/FormComponents'
+import { FormField, TextInput } from '../Shared/FormComponents'
 
 export interface FilePathInputProps extends FieldInputProps<any> {
     formType: 'upload' | 'link';
@@ -8,9 +8,9 @@ export interface FilePathInputProps extends FieldInputProps<any> {
 
 export const FilePathInput: React.FC<FilePathInputProps> = ({ formType, ...rest}) => {
     if (formType === 'upload'){
-        return <FormField {...rest} type="file" value="" label="File"/>
+        return <FormField {...rest} as={TextInput} type="file" value="" label="File"/>
     }
     else if (formType === 'link'){
-        return <FormField {...rest} type="text" label="Youtube Link"/>
+        return <FormField {...rest} as={TextInput} type="text" label="Youtube Link"/>
     }
 }

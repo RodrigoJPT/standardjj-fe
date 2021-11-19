@@ -7,15 +7,20 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { AuthProvider } from './Auth';
 import { AppContextProvider } from './AppContext';
 import * as serviceWorkerRegustration from './serviceWorkerRegistration';
+import { QueryClient, QueryClientProvider } from 'react-query';
+
+const queryClient = new QueryClient();
 
 ReactDOM.render(
-	<AuthProvider>
-		<AppContextProvider>
-			<Router>
-				<App />
-			</Router>
-		</AppContextProvider>
-	</AuthProvider>,
+	<QueryClientProvider client={queryClient}>
+		<AuthProvider>
+			<AppContextProvider>
+				<Router>
+					<App />
+				</Router>
+			</AppContextProvider>
+		</AuthProvider>
+	</QueryClientProvider>,
 	document.getElementById('root')
 );
 

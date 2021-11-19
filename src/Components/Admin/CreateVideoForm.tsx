@@ -1,7 +1,8 @@
 import React from 'react';
 import { Formik, Form } from 'formik';
-import { FormField } from '../Shared/FormComponents/'
+import { FormField, TextInput, TextArea } from '../Shared/FormComponents/'
 import { SeriesSelector, CreateTypeSelector, FilePathInput } from './';
+import styles from '../Shared/FormComponents/Forms.module.css';
 
 export interface VideoFormValues {
     title: string;
@@ -40,19 +41,18 @@ export const CreateVideoForm: React.FC = () => {
     }
 
     return (
-        <>
-            <h1>Create Video</h1>
             <Formik initialValues={initialValues} onSubmit={handleSubmit}>
                 {({values, setFieldValue, isSubmitting, handleChange, handleBlur, handleSubmit}) => (
                     <Form onSubmit={handleSubmit} style={{margin: '10px'}}>
-                        <fieldset disabled={isSubmitting}>
+                        <fieldset disabled={isSubmitting} className={styles.fieldset}>
+                        <h1>Create Video</h1>
                         <CreateTypeSelector/>
                         <FilePathInput name="path" formType={values.formType} value={values.path} onChange={(e) => setPath(e, values.formType, setFieldValue)} onBlur={handleBlur}/>
-                        <FormField name="title" label="Video Title" type="text"></FormField>
-                        <FormField name="description" label="Video Description" type="text" as="textarea"></FormField>
-                        <FormField name="number" label="Number in Series" type="text"></FormField>
+                        <FormField name="title" label="Video Title" type="text" as={TextInput}></FormField>
+                        <FormField name="description" label="Video Description" type="text" as={TextArea}></FormField>
+                        <FormField name="number" label="Number in Series" type="text" as={TextInput}></FormField>
                         <SeriesSelector name="series" value={values.series} onChange={handleChange} onBlur={handleBlur}/>
-                        <FormField name="tableOfContents" label="Table of Contents" type="text" as="textarea"></FormField>
+                        <FormField name="tableOfContents" label="Table of Contents" type="text" as={TextArea}></FormField>
                         <div style={{display: "block"}}>
                             <button disabled={isSubmitting} type="submit">{isSubmitting ? 'Please Wait' : 'Create Video'}</button>
                             <button disabled={isSubmitting} type="reset" className="err">Cancel</button>
@@ -62,6 +62,5 @@ export const CreateVideoForm: React.FC = () => {
                     </Form>
                 )}
             </Formik>
-        </>
     )
 }

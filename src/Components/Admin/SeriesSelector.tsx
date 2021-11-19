@@ -1,30 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Dropdown } from '../Shared/FormComponents';
 import { FieldInputProps } from 'formik';
-import axios from 'axios';
+import { useGetAllSeries } from '../../hooks';
+import { useHistory } from 'react-router';
 
 export const SeriesSelector: React.FC<FieldInputProps<string>> = (props) => {
-    const [series, setSeries] = useState([])
+    const { data: seriesCollection, isError } = useGetAllSeries()
 
-    async function getSeries(): Promise<any> {
-        try {
-            const seriesCollection = await (await axios.get('/test-series.json')).data
-            const seriesOptions = seriesCollection.map(item => ({value: item.id, label: item.name}))
-            setSeries(seriesOptions);
-        }
-        catch (ex) {
-            console.error(ex)
-        }
+    const history = useHistory();
+
+    if (isError) {
+        history.push('/oops');
     }
-
-    useEffect(() => {
-        if (!series.length){
-            getSeries()
-        }
-        /*eslint-disable-next-line */
-    }, [])
+    const seriesOptions = seriesCollection ? seriesCollection.map(item => ({value: item.id, label: item.name})) : [{value: undefined, label: 'Loading...'}]
 
     return (
-        <Dropdown options={series} label="Series" {...props}/>
+        <Dropdown options={seriesOptions} label="Series" {...props}/>
     )
 }
